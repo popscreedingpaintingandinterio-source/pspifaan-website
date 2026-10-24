@@ -1,39 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PSPIFAAN | Artisan & Membership Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSPIFAAN | Membership & Artisan Directory</title>
 <style>
-:root{--green:#42695d;--green2:#24473d;--pink:#c98f8d;--cream:#f5f7f5;--ink:#21332e;--muted:#65746e;--line:#dfe7e2;--white:#fff}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);font-family:Inter,Arial,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.top{max-width:1180px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--green2)}.brand img{width:48px;height:48px;object-fit:contain}.brand small{display:block;font-size:10px;color:var(--muted);font-weight:600;margin-top:3px}.nav{display:flex;gap:7px;flex-wrap:wrap}.nav button{border:0;background:transparent;color:var(--green2);padding:10px 12px;border-radius:8px;font-weight:700}.nav button.active,.nav button:hover{background:#eaf1ed}.wrap{max-width:1180px;margin:auto;padding:22px 20px}.page{display:none}.page.active{display:block}.hero{background:linear-gradient(120deg,#e7efeb,#fff 62%,#f8e9e8);border-radius:22px;padding:45px;display:grid;grid-template-columns:1.25fr .75fr;gap:25px;align-items:center}.eyebrow{font-size:12px;letter-spacing:1.5px;font-weight:800;color:var(--green);text-transform:uppercase}.hero h1{font-size:clamp(32px,4vw,52px);line-height:1.06;max-width:700px;margin:12px 0}.hero p{font-size:17px;line-height:1.7;color:#586b63;max-width:680px}.hero-logo{background:white;border-radius:20px;text-align:center;padding:25px;box-shadow:0 12px 35px #203f3212}.hero-logo img{width:190px;max-width:80%}.btn{border:0;border-radius:9px;padding:13px 17px;font-weight:800;display:inline-block;text-decoration:none}.primary{background:var(--green);color:#fff}.secondary{background:var(--pink);color:#fff}.soft{background:#e9f0ec;color:var(--green2)}.section-head{margin:35px 0 18px}.section-head h2{margin:0 0 7px;color:var(--green2)}.section-head p{margin:0;color:var(--muted);line-height:1.5}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px}.card h3{margin:8px 0;color:var(--green2)}.card p{line-height:1.6;color:var(--muted);margin-bottom:0}.icon{font-size:26px}.badge{display:inline-block;background:#e5f4e9;color:#21643d;padding:5px 9px;border-radius:30px;font-size:12px;font-weight:800}.warn{background:#fff3e3;border-left:4px solid var(--pink);padding:13px 15px;border-radius:7px;line-height:1.5;color:#634e3e;margin-bottom:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px}.wide{grid-column:1/-1}label{font-weight:700;font-size:13px}input,select,textarea{border:1px solid #cfdad4;border-radius:8px;padding:12px;background:#fff;min-width:0}textarea{min-height:85px;resize:vertical}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.small{font-size:12px;color:var(--muted);line-height:1.5}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.stat{padding:17px;border-radius:12px;background:#fff;border:1px solid var(--line)}.stat b{display:block;font-size:24px;color:var(--green2)}.searchbar{display:grid;grid-template-columns:1.2fr 1fr auto;gap:10px;margin:18px 0}.artisan{display:flex;flex-direction:column;gap:10px}.artisan .topline{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.pill{font-size:12px;background:#f1f4f2;padding:5px 8px;border-radius:30px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;background:#fff}th,td{text-align:left;border-bottom:1px solid var(--line);padding:11px;font-size:13px;white-space:nowrap}th{background:#f4f7f5;color:var(--green2)}.empty{padding:22px;text-align:center;color:var(--muted)}footer{margin-top:35px;background:var(--green2);color:#e5eeea;padding:25px;text-align:center;line-height:1.7}footer img{width:65px;background:#fff;border-radius:8px}.notice-ok{display:none;margin-top:12px;padding:12px;border-radius:8px;background:#e7f5e9;color:#245b36}
-@media(max-width:820px){.top{align-items:flex-start;flex-direction:column}.nav{width:100%;overflow:auto;flex-wrap:nowrap}.nav button{white-space:nowrap}.hero{grid-template-columns:1fr;padding:28px}.grid{grid-template-columns:1fr 1fr}.searchbar{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.grid,.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}.wrap{padding:14px}.hero h1{font-size:34px}.hero{padding:22px}.stats{grid-template-columns:1fr}}
-</style></head>
+:root{--green:#246b4b;--gold:#d7a842;--ink:#17251e;--muted:#5e6b63;--bg:#f5f8f5}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+header{background:#fff;border-bottom:1px solid #dce5de;padding:14px 5%;display:flex;align-items:center;gap:14px;position:sticky;top:0}
+header img{width:56px;height:56px;object-fit:contain}header strong{color:var(--green);font-size:1.05rem}
+nav{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}button,.btn{border:0;border-radius:8px;padding:11px 15px;background:var(--green);color:white;font-weight:bold;cursor:pointer;text-decoration:none}
+nav button{background:#e8f0eb;color:var(--green)}main{max-width:1000px;margin:auto;padding:22px 16px}
+.hero{background:linear-gradient(135deg,#174b35,#2f805a);color:white;padding:32px 24px;border-radius:16px}
+.hero h1{font-size:clamp(1.7rem,5vw,2.7rem);line-height:1.15;margin:0 0 12px}.hero p{max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
+.card{background:#fff;border:1px solid #e0e8e2;border-radius:12px;padding:18px;box-shadow:0 3px 12px #102c1810}
+section{margin:24px 0}.hidden{display:none!important}
+label{display:block;font-weight:bold;margin:12px 0 5px}input,select,textarea{width:100%;padding:12px;border:1px solid #cbd8cf;border-radius:8px;font:inherit;background:white}
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.note{font-size:.92rem;color:var(--muted)}.status{padding:12px;border-radius:8px;margin:12px 0;background:#edf5ef}
+footer{text-align:center;padding:24px;color:var(--muted)}.danger{background:#fff3df;color:#62430a;padding:12px;border-radius:8px}
+@media(max-width:600px){header{align-items:flex-start}nav{max-width:130px}nav button{padding:8px;font-size:.85rem}}
+</style>
+</head>
 <body>
-<header><div class="top"><div class="brand"><img src="association-logo.jpg" alt="Association logo"><div>PSPIFAAN<small>Artisan & Membership Portal</small></div></div>
-<nav class="nav" aria-label="Main navigation">
-<button class="active" data-page="home">Home</button><button data-page="register">Membership</button><button data-page="directory">Find an Artisan</button><button data-page="admin">Admin Demo</button><button data-page="about">About</button>
-</nav></div></header>
-<main class="wrap">
-<section id="home" class="page active">
-<div class="hero"><div><div class="eyebrow">Professional skills • Verified membership • Better service</div><h1>Connecting Nigerians with skilled, trusted artisans.</h1><p>POP Screeding Painting and Interior Finishing Artisan Association of Nigeria supports artisans with digital membership and helps clients find association-approved professionals by trade and location.</p><button class="btn primary" data-go="register">Apply for Membership</button> <button class="btn secondary" data-go="directory">Find an Artisan</button></div>
-<div class="hero-logo"><img src="association-logo.jpg" alt="PSPIFAAN logo"><h3>Beautification is our pride</h3><p class="small">The association's digital service concept</p></div></div>
-<div class="section-head"><h2>What you can do here</h2><p>This demonstration shows the planned user experience for members, association officers and clients.</p></div>
-<div class="grid"><div class="card"><div class="icon">👷</div><h3>Apply from home</h3><p>Submit professional details and request membership without travelling to an office.</p></div><div class="card"><div class="icon">🔎</div><h3>Find a verified artisan</h3><p>Search the directory by trade, state and local area. Only approved profiles should appear in the live directory.</p></div><div class="card"><div class="icon">🛡️</div><h3>Accountability</h3><p>Support verification checks, member status management and a clear complaints process.</p></div></div>
-<div class="warn" style="margin-top:20px"><b>Prototype notice:</b> This is a visual and browser demo, not a live website. The sample directory is illustrative only. No information is sent to PSPIFAAN.</div>
+<header>
+<img src="association-logo.jpg" alt="PSPIFAAN logo" onerror="this.style.display='none'">
+<strong>PSPIFAAN<br><small>Artisan Association of Nigeria</small></strong>
+<nav><button onclick="showPage('home')">Home</button><button onclick="showPage('membership')">Join Us</button><button onclick="showPage('about')">About</button></nav>
+</header>
+<main>
+<section id="home" class="page">
+<div class="hero">
+<h1>Trusted Artisans. Quality Workmanship.</h1>
+<p>POP Screeding Painting and Interior Finishing Artisan Association of Nigeria (PSPIFAAN) supports skilled artisans and helps clients find reliable professionals.</p>
+<button onclick="showPage('membership')">Apply for Membership</button>
+</div>
+<div class="grid">
+<div class="card"><h2>Become a Member</h2><p>Submit your details for review by the Membership Committee and final consideration by the National Executive Council.</p><button onclick="showPage('membership')">Start application</button></div>
+<div class="card"><h2>Find an Artisan</h2><p>Our public directory will list artisans after their details have been reviewed and approved.</p><p class="note">The verified directory is being prepared and will appear here after approval features are connected.</p></div>
+<div class="card"><h2>Payments</h2><p>Membership and renewal payments will be enabled after the association confirms its fees and payment provider.</p><p class="note">Do not send money to unofficial accounts.</p></div>
+</div>
+<div class="danger"><strong>Setup notice:</strong> Online applications should not be opened to the public until the database and secure submission function have been configured and tested.</div>
 </section>
-
-<section id="register" class="page">
-<div class="section-head"><h2>Membership application</h2><p>Fill in the details below to preview how online registration will look on a phone.</p></div>
-<div class="warn"><b>Demo only:</b> This form stores a preview in this browser only. It does not submit to the association or create an official membership number. Do not enter sensitive identity numbers or upload private documents in this prototype.</div>
-<div class="panel"><form id="membershipForm"><div class="formgrid">
-<div class="field"><label>Full name *</label><input name="name" required></div><div class="field"><label>Phone / WhatsApp *</label><input name="phone" type="tel" required></div>
-<div class="field"><label>Email</label><input name="email" type="email"></div><div class="field"><label>Membership category *</label><select name="category" required><option value="">Choose category</option><option>Artisan / Practitioner</option><option>Apprentice / Trainee</option><option>Contractor / Business</option><option>Associate / Supporter</option></select></div>
-<div class="field"><label>Main trade *</label><select name="trade" required><option value="">Choose trade</option><option>POP Ceiling Installation</option><option>Wall Screeding</option><option>Interior Painting</option><option>Exterior Painting</option><option>Interior Finishing</option><option>Building Renovation</option><option>Decorative Ceiling Designs</option><option>Multiple Trades</option><option>Other</option></select></div>
-<div class="field"><label>Years of experience *</label><select name="experience" required><option value="">Choose</option><option>Under 1 year</option><option>1–3 years</option><option>4–7 years</option><option>8–15 years</option><option>Over 15 years</option></select></div>
-<div class="field"><label>State / FCT *</label><select name="state" required><option value="">Choose state</option><option>FCT Abuja</option><option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option><option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>Gombe</option><option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option><option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option><option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option></select></div>
-<div class="field"><label>LGA / service area *</label><input name="lga" required></div><div class="field wide"><label>Other skills / services</label><textarea name="skills"></textarea></div>
+<section id="membership" class="page hidden">
+<div class="card">
+<h1>Membership Application</h1>
+<p class="note">Please provide accurate information. Submission does not mean membership is approved. The Membership Committee reviews applications and the National Executive Council makes the final decision.</p>
+<form id="applicationForm">
+<div class="formgrid">
+<div><label for="full_name">Full name *</label><input id="full_name" name="full_name" required maxlength="120"></div>
+<div><label for="phone">Phone number *</label><input id="phone" name="phone" required maxlength="30" inputmode="tel"></div>
+<div><label for="email">Email (if available)</label><input id="email" name="email" type="email" maxlength="160"></div>
+<div><label for="state">State *</label><input id="state" name="state" required maxlength="80"></div>
+<div><label for="city">Town / LGA *</label><input id="city" name="city" required maxlength="100"></div>
+<div><label for="trade">Main trade *</label><select id="trade" name="trade" required><option value="">Choose a trade</option><option>POP Ceiling</option><option>Wall Screeding</option><option>Painting</option><option>Interior Finishing</option><option>Renovation</option><option>Other</option></select></div>
+<div><label for="experience">Years of experience</label><select id="experience" name="experience"><option value="">Choose</option><option>Less than 1 year</option><option>1–3 years</option><option>4–7 years</option><option>8–15 years</option><option>16+ years</option></select></div>
+</div>
+<label for="address">Address / area (do not include sensitive details)</label><input id="address" name="address" maxlength="200">
+<label for="message">Additional information</label><textarea id="message" name="message" rows="4" maxlength="1000"></textarea>
+<p><label style="font-weight:normal"><input style="width:auto" type="checkbox" required> I confirm these details are accurate and consent to PSPIFAAN using them to review my membership application.</label></p>
+<button type="submit">Submit application</button>
+<div id="formStatus" class="status hidden" role="status"></div>
+</form>
+</div>
+</section>
+<section id="about" class="page hidden"><div class="card"><h1>About PSPIFAAN</h1><p>The POP Screeding Painting and Interior Finishing Artisan Association of Nigeria (PSPIFAAN) brings together artisans in POP ceiling installation, wall screeding, painting, interior finishing and related trades.</p><p>Our aims include promoting quality workmanship, professional conduct, skills development, and helping clients identify trustworthy artisans.</p><p class="note">Official membership approval follows the association's constitution and established procedures.</p></div></section>
+</main>
+<footer>© PSPIFAAN — POP Screeding Painting and Interior Finishing Artisan Association of Nigeria</footer>
+<script>
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo(0,0)}
+const form=document.getElementById('applicationForm');
+form.addEventListener('submit',async(e)=>{
+ e.preventDefault();
+ const status=document.getElementById('formStatus');
+ status.classList.remove('hidden');status.textContent='This form is a prepared template. It will accept real applications only after the secure Supabase submission function is deployed and connected.';
+ // Intentionally do not save private applicant data to the browser or pretend the application was submitted.
+});
+</script>
+</body></html>
+area name="skills"></textarea></div>
 <div class="field wide"><label>Portfolio link (optional)</label><input name="portfolio" type="url" placeholder="Link to project photos or business page"></div>
 <div class="field"><label>Referee name (optional)</label><input name="referee"></div><div class="field"><label>Referee phone (optional)</label><input name="refphone" type="tel"></div>
 <div class="field wide"><label class="small"><input type="checkbox" required style="width:auto"> I confirm the information is accurate and understand that the association must review my application before approval.</label></div>
