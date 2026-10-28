@@ -37,7 +37,28 @@ footer{text-align:center;padding:24px;color:var(--muted)}.danger{background:#fff
 <button onclick="showPage('membership')">Apply for Membership</button>
 </div>
 <div class="grid">
-<div class="card"><h2>Become a Member</h2><p>Submit your details for review by the Membership Committee and final consideration by the National Executive Council.</p></p><button onclick="window.open('https://forms.gle/LHQHmjitjPCHTDBFA','_blank')">Start application</button></div>
+<div class="card"><h2>Become a Member</h2><p>Submit your details for review by the Membership Committee and final consideration by the National Executive Council.</p> 
+<div class="card">
+  <h2>Become a Member</h2>
+  <p>Submit your details for review by the Membership Committee and final consideration by the National Executive Council.</p>
+  <button onclick="window.open('https://forms.gle/LHQHmjitjPCHTDBFA','_blank')">Start application</button>
+</div>
+
+<div class="card" id="payments">
+  <h2>PSPIFAAN Payment Portal</h2>
+  <p>Select the item you want to pay for. Regular membership dues will be announced after official approval.</p>
+
+  <label for="paymentType">Select payment type:</label>
+  <select id="paymentType" onchange="showPaymentAmount()">
+    <option value="10000">Membership Registration — ₦10,000</option>
+    <option value="5000">Membership ID Card — ₦5,000</option>
+    <option value="15000">Face Cap and T-shirt — ₦15,000</option>
+  </select>
+
+  <p>Amount payable: <strong id="paymentAmount">₦10,000</strong></p>
+  <p>To complete your payment, contact the PSPIFAAN Financial Secretary for the official bank-transfer instructions. Your payment must be verified before it is confirmed.</p>
+  <button onclick="window.open('https://wa.me/','_blank')">Request Payment Instructions</button>
+</div>
 <div class="card"><h2>Find an Artisan</h2><p>Our public directory will list artisans after their details have been reviewed and approved.</p><p class="note">The verified directory is being prepared and will appear here after approval features are connected.</p></div>
 <div class="card"><h2>Payments</h2><p>Membership and renewal payments will be enabled after the association confirms its fees and payment provider.</p><p class="note">Do not send money to unofficial accounts.</p></div>
 </div>
