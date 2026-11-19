@@ -61,7 +61,48 @@ footer{text-align:center;padding:24px;color:var(--muted)}.danger{background:#fff
 <button onclick="window.open('https://wa.me/2348168893295?text=Hello%20PSPIFAAN%2C%20I%20want%20to%20make%20a%20membership%20payment.%20Please%20send%20me%20the%20official%20payment%20instructions.','_blank')">Request Payment Instructions</button>
 
 </div>
-<div class="card"><h2>Find an Artisan</h2><p>Our public directory will list artisans after their details have been reviewed and approved.</p><p class="note">The verified directory is being prepared and will appear here after approval features are connected.</p></div>
+
+<div class="card">
+<h2>Find a PSPIFAAN Artisan</h2>
+<p>Find skilled and verified professionals across Nigeria.</p>
+
+<input type="text" id="artisanSearch"
+placeholder="Search artisan name or location..."
+oninput="searchArtisans()">
+
+<select id="artisanSkill" onchange="searchArtisans()">
+<option value="">All Professional Skills</option>
+<option value="POP Ceiling">POP Ceiling</option>
+<option value="Screeding">Wall Screeding</option>
+<option value="Painting">Painting</option>
+<option value="Interior Finishing">Interior Finishing</option>
+<option value="Renovation">Building Renovation</option>
+</select>
+
+<div id="artisanResults">
+<p>No verified artisans listed yet. Please check back soon.</p>
+</div>
+</div>
+
+<script>
+const artisans = [];
+
+function searchArtisans() {
+const search = document.getElementById("artisanSearch").value.toLowerCase();
+const skill = document.getElementById("artisanSkill").value;
+
+const matches = artisans.filter(a =>
+(a.name + " " + a.location).toLowerCase().includes(search) &&
+(!skill || a.skills.includes(skill))
+);
+
+document.getElementById("artisanResults").innerHTML =
+matches.length
+? matches.map(a => `<p><b>${a.name}</b><br>${a.location}<br>${a.skills.join(", ")}<br>${a.phone}</p>`).join("")
+: "<p>No matching verified artisans found.</p>";
+}
+</script>
+
 <div class="card"><h2>Payments</h2><p>Membership and renewal payments will be enabled after the association confirms its fees and payment provider.</p><p class="note">Do not send money to unofficial accounts.</p></div>
 </div>
 <div class="danger"><strong>Setup notice:</strong> Online applications should not be opened to the public until the database and secure submission function have been configured and tested.</div>
