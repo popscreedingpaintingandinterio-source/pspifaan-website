@@ -261,4 +261,43 @@ document.getElementById('searchBtn').addEventListener('click',renderDirectory);d
 document.getElementById('membershipForm').addEventListener('submit',e=>{e.preventDefault();let a=Object.fromEntries(new FormData(e.target).entries());let apps=getApps();apps.push(a);localStorage.setItem('pspifaanDemoApps',JSON.stringify(apps));let n=document.getElementById('formNotice');n.style.display='block';n.textContent='Demo preview saved in this browser only. It has not been sent to PSPIFAAN and no membership number has been issued.';});
 document.getElementById('membershipForm').addEventListener('reset',()=>{document.getElementById('formNotice').style.display='none'});
 renderDirectory();renderApps();
-</script></body></html>
+</script>
+<section class="card" id="artisan-marketplace">
+  <h2>PSPIFAAN Artisan Marketplace</h2>
+  <p>Find, view, compare and connect with skilled interior finishing professionals across Nigeria.</p>
+
+  <label for="tradeSearch">Choose Professional Category</label>
+  <select id="tradeSearch">
+    <option value="">All Artisan Categories</option>
+    <option>POP Ceiling Installation</option>
+    <option>PVC Ceiling Installation</option>
+    <option>Gypsum Board and Partition</option>
+    <option>Wall Screeding</option>
+    <option>Painting and Decoration</option>
+    <option>Wallpaper and Wall Panels</option>
+    <option>Flooring and Tiling</option>
+    <option>Carpentry and Furniture</option>
+    <option>Kitchen and Wardrobe Installation</option>
+    <option>Electrical Installation</option>
+    <option>Plumbing</option>
+    <option>Air Conditioning</option>
+    <option>Interior Design</option>
+    <option>Curtains and Blinds</option>
+    <option>Upholstery</option>
+    <option>Glass and Aluminium</option>
+    <option>Building Renovation</option>
+    <option>Other Interior Finishing Services</option>
+  </select>
+
+  <p><strong>Artisan portfolios</strong></p>
+  <p>Approved artisans will display their completed projects, photographs and professional experience here.</p>
+
+  <div class="card">
+    <h3>Artisan profiles coming soon</h3>
+    <p>PSPIFAAN is preparing its verified artisan directory. Only approved artisans will be displayed.</p>
+  </div>
+
+  <p><strong>Client connection fee: ₦10,000 per artisan.</strong></p>
+  <p>Online payment will be introduced when the payment system is ready.</p>
+</section>
+</body></html>
